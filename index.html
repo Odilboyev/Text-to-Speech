@@ -9,14 +9,18 @@
 </head>
 <body>
     
-    Select voice: 
-    <select name="" id="voiceList"></select>
+    Select voice and language: 
+    <select id="voiceList"></select>
     <br><br>
-    <input type="text" id="txtSpeech">
+    <textarea name="" id="txtSpeech" cols="30" rows="10"></textarea>
     <br><br>
-    <button id="btnSpeak"> 
+
+    <button id="btnSpeak" class=''> 
         Speak
     </button>
+
+    <button id="pause" class="d-none">pause</button>
+    <button id="resume" class="d-none">resume</button>
 
     <script src="./main.js"></script>
 </body>
