@@ -59,14 +59,15 @@
           flex-direction: column;
 }
 
-.wrapper .container select, .wrapper .container textarea {
+.wrapper .container select,
+.wrapper .container textarea {
   background-color: #0F3558;
   color: #fff;
   font-size: 18px;
 }
 
 .wrapper .container .input-container {
-  width: 80% !important;
+  width: 80%;
   min-height: 200px !important;
 }
 
@@ -108,5 +109,16 @@
 .wrapper .container button:active {
   -webkit-transform: scale(0.9);
           transform: scale(0.9);
+}
+
+@media (max-width: 760px) {
+  select,
+  .input-container,
+  .container {
+    width: 90% !important;
+  }
+  h1 {
+    font-size: 20px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
