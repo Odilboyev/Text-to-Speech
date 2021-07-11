@@ -6,6 +6,7 @@
           box-sizing: border-box;
   font-family: 'Ubuntu', sans-serif;
   outline: none;
+  border-radius: 4px;
 }
 
 .d-none {
@@ -13,6 +14,11 @@
 }
 
 .wrapper {
+  background-image: url(../back.jpg);
+  background-size: cover;
+  background-position: center;
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
   width: 100vw;
   min-height: 100vh;
   display: -webkit-box;
@@ -26,10 +32,17 @@
           align-items: center;
 }
 
+.wrapper h1 {
+  color: #2bcde2;
+}
+
 .wrapper .container {
-  width: 60%;
+  width: 80%;
   padding: 40px 30px;
-  border: 1px solid #eee;
+  border: 1px solid #ffffff45;
+  background-color: #ffffff05;
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
   text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -46,10 +59,15 @@
           flex-direction: column;
 }
 
+.wrapper .container select, .wrapper .container textarea {
+  background-color: #0F3558;
+  color: #fff;
+  font-size: 18px;
+}
+
 .wrapper .container .input-container {
   width: 80% !important;
   min-height: 200px !important;
-  border: 1px solid #eee;
 }
 
 .wrapper .container .input-container textarea {
@@ -58,6 +76,7 @@
   height: 200px;
   max-height: 100%;
   padding: 20px;
+  border: 1px solid #ffffff38;
 }
 
 .wrapper .container select {
@@ -67,8 +86,27 @@
 }
 
 .wrapper .container button {
-  padding: 20px;
+  padding: 10px 60px;
   font-size: 20px;
   font-weight: bold;
+  background-color: #00198b;
+  color: #fff;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.315);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.315);
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.wrapper .container button:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.wrapper .container button:active {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
 }
 /*# sourceMappingURL=style.css.map */

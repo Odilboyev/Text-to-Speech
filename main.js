@@ -29,28 +29,31 @@ window.onload = function () {
     speechSynthesis.onvoiceschanged = GetVoices;
   }
 
-  btnSpeak.addEventListener("click", () => {
-    let toSpeak = new SpeechSynthesisUtterance(txtSpeech.value);
-    let selectedVoiceName =
-      voiceList.selectedOptions[0].getAttribute("data-name");
-    voices.forEach((voice) => {
-      if (voice.name === selectedVoiceName) {
-        toSpeak.voice = voice;
+  
+    btnSpeak.addEventListener("click", () => {
+      let toSpeak = new SpeechSynthesisUtterance(txtSpeech.value);
+      let selectedVoiceName =
+        voiceList.selectedOptions[0].getAttribute("data-name");
+        if (txtSpeech.value !== "") {
+      voices.forEach((voice) => {
+        if (voice.name === selectedVoiceName) {
+          toSpeak.voice = voice;
+        }
+      });
+      tts.cancel();
+      tts.speak(toSpeak);
+      if (window.speechSynthesis.speaking) {
+        btnPause.classList.remove("d-none");
+        btnSpeak.classList.add("d-none");
+      } else {
       }
-    });
-    tts.cancel();
-    tts.speak(toSpeak);
-    if (window.speechSynthesis.speaking) {
-      btnPause.classList.remove("d-none");
-      btnSpeak.classList.add("d-none");
-    } else {
+      toSpeak.onend = () => {
+        btnPause.classList.add("d-none");
+        btnResume.classList.add("d-none");
+        btnSpeak.classList.remove("d-none");
+      };
     }
-    toSpeak.onend = () => {
-      btnPause.classList.add("d-none");
-      btnResume.classList.add("d-none");
-      btnSpeak.classList.remove("d-none");
-    };
-  });
+    });
 
   btnPause.addEventListener("click", () => {
     tts.pause();
