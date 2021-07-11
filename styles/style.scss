@@ -37,12 +37,20 @@
                 max-width: 100% !important;
                 height: 200px;
                 max-height: 100%;
+                padding: 20px;
             }
         }
 
         select{
             width: 80%;
             padding: 20px ;
+            cursor: pointer;
+        }
+
+        button{
+            padding: 20px ;
+            font-size: 20px;
+            font-weight: bold;
         }
         
     }
